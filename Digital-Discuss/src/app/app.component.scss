@@ -11,5 +11,12 @@
     .app-body {
         display: flex;
         flex: 1 1 auto;
+        position: relative;
+    }
+    .app-body-inner {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        overflow: auto;
     }
 }

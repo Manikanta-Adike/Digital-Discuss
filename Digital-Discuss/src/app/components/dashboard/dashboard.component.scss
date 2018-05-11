@@ -1,0 +1,44 @@
+
+.container-fluid{
+
+    height: 100%;
+
+    .row{
+        height: 100%;
+
+        .side-tab-wrapper{
+            background: #343a40;
+
+            .side-tab{
+                margin: 10px 0px;
+                //background: #e9ecef;
+                display: table;
+                border-radius: 5px;
+
+                &.active{
+                    //background: #fff;
+                    border-radius: 0px;
+                    max-width: 110%;
+                    width: 110%;
+                }
+
+                &:hover{
+                    cursor: pointer;
+                }
+
+                .tab-heading{
+                    height: 50px;
+                    display: table-cell;
+                    vertical-align: middle;
+                    text-align: center;
+                    width: 100%;
+                    
+                }        
+            }
+        }
+        .tab-content{
+            padding: 20px;
+            text-align: center
+        }
+    }    
+}

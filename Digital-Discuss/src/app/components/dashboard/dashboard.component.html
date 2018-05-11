@@ -1,3 +1,68 @@
-<p>
-  dashboard works!
-</p>
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = " col-2 side-tab-wrapper">
+      <div class = 'active side-tab col-12' (click) = "changeTab('recentQuestion')">
+        <span class = 'tab-heading'>Recent Questions</span>
+      </div>
+      <div class = 'side-tab col-12' (click) = "changeTab('topQuestion')">
+        <span class = 'tab-heading'>Top Queries</span>
+      </div>
+      <div class = 'side-tab col-12' (click) = "changeTab('topTag')">
+        <span class = 'tab-heading'>Top Tags</span>
+      </div>
+      <div class = 'side-tab col-12'(click) = "changeTab('postQuestion')">
+        <span class = 'tab-heading'>Post Question</span>
+      </div>
+    </div>
+    <div class = "col-10">
+      <div class = 'tab-content' *ngIf = 'activeTab === "recentQuestion"'>
+        Recent Questions
+      </div>
+      <div class = 'tab-content' *ngIf = 'activeTab === "topQuestion"'>
+        Top Queries
+      </div>
+      <div class = 'tab-content' *ngIf = 'activeTab === "topTag"'>
+        Top Tags
+      </div>
+      <div class = 'tab-content' *ngIf = 'activeTab === "postQuestion"'>
+        Post Question
+      </div>
+    </div>
+  </div>
+  <!-- <nav class="sidebar z-depth-1-half">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+           
+              <i class="fas fa-tachometer-alt"></i> <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            
+              <i class="fas fa-plus-square"></i> <span>Create Party</span>
+            </a>
+          </li>
+          <li class="nav-item">
+           
+              <i class="fas fa-search"></i> <span>Search</span>
+            </a>
+          </li>
+    
+          <li class="nav-item">
+            
+              <i class="fas fa-upload"></i> <span>Data Loader</span>
+            </a>
+          </li>
+    
+        </ul>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="javascripe:;">
+              <i class="fas fa-file-alt"></i> <span>Party 1</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+</div> -->
