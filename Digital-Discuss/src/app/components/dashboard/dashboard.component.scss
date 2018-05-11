@@ -15,13 +15,6 @@
                 display: table;
                 border-radius: 5px;
 
-                &.active{
-                    //background: #fff;
-                    border-radius: 0px;
-                    max-width: 110%;
-                    width: 110%;
-                }
-
                 &:hover{
                     cursor: pointer;
                 }
@@ -30,10 +23,13 @@
                     height: 50px;
                     display: table-cell;
                     vertical-align: middle;
-                    text-align: center;
                     width: 100%;
                     color:#868e96;
                     font-size: 18px;
+
+                    &.active{
+                        color: #adb5bd;
+                    }
                     
                     &:hover{
                         color: #adb5bd;

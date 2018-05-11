@@ -18,13 +18,14 @@ export class DashboardComponent implements OnInit {
 
   public changeTab(selected)  {
     this.activeTab = selected;
-    const tabs = document.querySelectorAll('side-tab');
+    const tabs = document.querySelectorAll('.tab-heading');
 
     for (let i = 0; i < tabs.length; i++) {
-      tabs[i].className = 'tabs';
+      console.log(tabs[i]);
+      tabs[i].className = 'tab-heading';
     }
 
-    //event.srcElement.className = 'tabs active';
+    event.srcElement.className = 'tab-heading active';
   }
 
 }
