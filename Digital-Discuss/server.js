@@ -49,7 +49,7 @@ app.get('/getQuestions', routes.questions.getQuestions);
 app.get('/getTopQuestions', routes.questions.getTopQuestions);
 
 // Restfull API to get the questions list
-//app.get('/getTopTags', routes.questions.getTopTags);
+app.get('/getTopTags', routes.questions.getTopTags);
 
 // Restfull API to get the my questions list
 app.post('/getMyQuestions', routes.questions.getMyQuestions);
