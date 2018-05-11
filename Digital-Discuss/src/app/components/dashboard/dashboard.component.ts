@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
       tabs[i].className = 'tabs';
     }
 
-    event.srcElement.className = 'tabs active';
+    //event.srcElement.className = 'tabs active';
   }
 
 }
