@@ -19,7 +19,7 @@
       <div class = 'side-tab col-12'>
         <span class = 'tab-heading' (click) = "changeTab('postQuestion')"><i class="material-icons">
             question_answer
-            </i>Ask Question</span>
+            </i>Ask a Question</span>
       </div>
     </div>
     <div class = "col-10">
@@ -46,7 +46,7 @@
         Top Tags
       </div>
       <div class = 'tab-content' *ngIf = 'activeTab === "postQuestion"'>
-        Ask Question
+        <app-post-question></app-post-question>
       </div>
     </div>
   </div>

@@ -1,0 +1,15 @@
+.post-question-page {
+    .mat-form-field {
+        display: block;
+    }
+    .tags-chip-list {
+        .mat-chip {
+            background-color: #0f706b;
+            color: white;
+        }
+        .mat-icon {
+            color: white;
+            opacity: 1;
+        }
+    }
+}
