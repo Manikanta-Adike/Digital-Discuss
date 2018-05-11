@@ -8,12 +8,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MaterialModule } from './dependencies/material.module';
 import { routes } from './app.routing';
+import { PostQuestionComponent } from './components/post-question/post-question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    PostQuestionComponent
   ],
   imports: [
     BrowserModule,
