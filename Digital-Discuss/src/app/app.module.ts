@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
+import { MaterialModule } from './dependencies/material.module';
 import { routes } from './app.routing';
 
 @NgModule({
@@ -16,6 +16,7 @@ import { routes } from './app.routing';
   ],
   imports: [
     BrowserModule,
+    MaterialModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
   providers: [],

@@ -1,0 +1,15 @@
+
+.app-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+
+    app-header {
+        display: flex;
+        flex: 0 1 auto;
+    }
+    .app-body {
+        display: flex;
+        flex: 1 1 auto;
+    }
+}
