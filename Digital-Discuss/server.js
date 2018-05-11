@@ -45,6 +45,12 @@ app.post('/logout', routes.user.logout);
 // Restfull API to get the questions list
 app.get('/getQuestions', routes.questions.getQuestions);
 
+// Restfull API to get the top questions list
+app.get('/getTopQuestions', routes.questions.getTopQuestions);
+
+// Restfull API to get the questions list
+//app.get('/getTopTags', routes.questions.getTopTags);
+
 // Restfull API to get the my questions list
 app.post('/getMyQuestions', routes.questions.getMyQuestions);
 

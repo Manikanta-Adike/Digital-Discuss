@@ -50,3 +50,17 @@ exports.getMyQuestions = function (req, res) {
         }
     }).sort({ _id: -1 });
 };
+
+exports.getTopQuestions = function (req, res) {
+    var data = {};
+    db.questionsModel.aggregate([{ "$project": { "length": { "$size": "$answers" }, "title": 1, "description": 1, "username": 1 } }, { "$sort": { "length": -1 } }], function (err, success) {
+        if (success) {
+            data.questions = success;
+            data.status = 201;
+            res.json(data);
+        } else {
+            data.status = 401;
+            res.json(data);
+        }
+    })
+}
