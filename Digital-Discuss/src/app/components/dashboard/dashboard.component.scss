@@ -1,3 +1,10 @@
+h1,h2,h3,h4,h5,h6{
+    font-weight: 800;
+}
+p{
+    line-height: 1.5;
+    margin: 30px 0; 
+}
 
 .container-fluid{
 
@@ -45,7 +52,50 @@
         }
         .tab-content{
             padding: 20px;
-            text-align: center
+
+            .selected-section{
+                text-align: center;
+            }
+
+            .question-preview{
+                    
+                font-size: 20px;
+                color: #212529;
+                font-family: Lora,'Times New Roman',serif;
+
+                a{
+                    color: #212529;
+
+                    &:hover, &:focus{
+                        text-decoration: none;
+                        color: #0085a1;
+                    }
+
+                    .question-title{
+                        font-size: 30px;
+                        margin-top: 30px;
+                        margin-bottom: 10px;
+                        text-align: left;
+                    }
+
+                    .question-subtitle{
+                        font-weight: 300;
+                        margin: 0 0 10px;
+                    }
+                }
+
+                .question-meta{
+                    font-size: 18px;
+                    font-style: italic;
+                    margin-top: 0;
+                    color: #868e96;
+
+                    a{
+                        text-decoration: none;
+                        color: #212529;
+                    }
+                }
+            }
         }
     }    
 }
