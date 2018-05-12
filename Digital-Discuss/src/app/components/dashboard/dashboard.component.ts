@@ -44,6 +44,9 @@ export class DashboardComponent implements OnInit {
     } else if (selected === 'topTag') {
       this.selectedTab = 'Top Tag';
       this.getQuestion('http://localhost:3000/getTopTags');
+    } else if (selected === 'askQuestion') {
+      this.selectedTab = 'Ask Question';
+      console.log(this.selectedTab);
     }
 
     // const tabs = document.querySelectorAll('.tab-heading');

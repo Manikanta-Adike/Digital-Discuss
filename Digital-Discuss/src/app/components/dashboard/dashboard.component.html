@@ -17,7 +17,7 @@
             </i>Top Tags</span>
       </div>
       <div class = 'side-tab col-12'>
-        <span class = 'tab-heading {{activeTab === "postQuestion" ? "active" : ""}}' (click) = "changeTab('postQuestion')"><i class="material-icons">
+        <span class = 'tab-heading {{activeTab === "postQuestion" ? "active" : ""}}' (click) = "changeTab('askQuestion')"><i class="material-icons">
             question_answer
             </i>Ask a Question</span>
       </div>
@@ -65,7 +65,7 @@
                       </div>
                     </div>  
       </div>
-      <div class = 'tab-content' *ngIf = 'activeTab === "postQuestion"'>
+      <div class = 'tab-content' *ngIf = 'selectedTab === "Ask Question"'>
         <h1 class = 'selected-section'>Ask a Question</h1>
         <app-post-question></app-post-question>
       </div>
