@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AppService } from '../../services/app.service';
 
 @Component({
   selector: 'app-question-answer',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class QuestionAnswerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appServive: AppService) { }
 
   answerForm = new FormGroup({
     answer: new FormControl()
