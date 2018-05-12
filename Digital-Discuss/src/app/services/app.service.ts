@@ -52,4 +52,12 @@ export class AppService {
         return this._http.post(`http://localhost:3000/register`, body, { headers: headers });
     }
 
+    like(url, data) {
+        return this._http.post(url, data);
+    }
+
+    dislike(url, data) {
+        return this._http.post(url, data);
+    }
+
 }

@@ -79,11 +79,7 @@
       </div>
       <div class="tab-content"  *ngIf = 'activeTab === "profile"'>
           <h1 class = 'selected-section'>User Profile</h1>
-          <div><span>Username</span>  -  <span>{{appService.user.username}}</span></div>
-          <div><span>Number of Responses</span>  -  <span>{{questionList[appService.user.username].answers.length}}</span></div>
-          <div><span>Total Likes</span>  -  <span>{{questionList[appService.user.username].answers.like}}</span></div>
-          <div><span>Total Dislikes</span>  -  <span>{{questionList[appService.user.username].answers.dislike}}</span></div>
-          <div><span>Rank</span>  -  <span>{{questionList[appService.user.username].answers.like > 10 ? 'Gold' : questionList.cmalladi.answers.like > 5 ? 'Silver' : 'Bronze'}}</span></div>
+         
       </div>
     </div>
   </div>

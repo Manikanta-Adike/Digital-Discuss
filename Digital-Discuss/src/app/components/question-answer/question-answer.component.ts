@@ -53,4 +53,30 @@ export class QuestionAnswerComponent implements OnInit {
     const url = 'http://localhost:3000/addAnswer';
     this.appServive.postAnswer(url, data).subscribe( response => console.log(response) );
   }
+
+  dislike(item) {
+    const data = {};
+    data['_id'] = item.id;
+    data['username'] = 'ram';
+    const url = 'http://localhost:3000/likeAnswer';
+
+    this.appServive.dislike(url, data).subscribe( response => {
+      if (response['dislike']) {
+        item['dislike'] = item['dislike'].push('ram');
+      }
+    });
+  }
+
+  like(item) {
+    const data = {};
+    data['_id'] = item.id;
+    data['username'] = 'ram';
+    const url = 'http://localhost:3000/dislikeAnswer';
+
+    this.appServive.dislike(url, data).subscribe( response => {
+      if (response['like']) {
+        item['like'] = item['like'].push('ram');
+      }
+    });
+  }
 }

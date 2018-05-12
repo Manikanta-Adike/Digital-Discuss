@@ -30,13 +30,13 @@
             <a href="#">{{answer.username}}</a>
             on September 24, 2018 
             <span class = "like-button">{{answer.like.length}}
-                <i class="material-icons">
+                <i class="material-icons" (click) = "dislike(answer);">
                     thumb_down
                     </i>
               
             </span>
             <span class = "dislike-button">{{answer.dislike.length}}
-                <i class="material-icons">
+                <i class="material-icons" (click) = "like(answer);">
                     thumb_up
                   </i>
             </span>
