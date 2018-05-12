@@ -48,7 +48,7 @@ exports.addAnswer = function (req, res) {
 exports.getAnswers = function (req, res) {
     var data = {};
     console.log(req.body);
-    db.answersModel.find({ questionid: req.body._id }, { _id: 0 }, function (err, success) {
+    db.answersModel.find({ questionid: req.body._id }, {}, function (err, success) {
         if (success) {
             console.log(success);
             data.answers = success;

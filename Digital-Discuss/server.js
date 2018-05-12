@@ -38,6 +38,10 @@ app.get('/dashboard', function(req, res){
     res.redirect('/');
 });
 
+app.get('/answer', function(req, res){
+    res.redirect('/');
+});
+
 // Restfull API to login
 app.post('/checkLogin', routes.user.login);
 

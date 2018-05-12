@@ -49,7 +49,7 @@ export class QuestionAnswerComponent implements OnInit {
     data['dislike'] = [];
     data['username'] = 'ram';
     data['questionid'] = this.appServive.question.id;
-    data['description'] = this.answerForm['answer'].value;
+    data['description'] = this.answerForm.value['answer'];
     const url = 'http://localhost:3000/addAnswer';
     this.appServive.postAnswer(url, data).subscribe( response => console.log(response) );
   }
