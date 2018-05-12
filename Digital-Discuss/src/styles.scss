@@ -8,3 +8,100 @@ html, body {
 .fill-remaining-space {
     flex: 1 1 auto;
 }
+
+
+.cdk-overlay-pane{
+    width: 80vw;
+    height: 80vh;
+}
+
+  
+//login
+app-login-register{
+
+    font-size: 16px !important;
+
+    width: 100%;
+  
+    .mat-form-field
+    {
+        width: 400px;
+    }
+  
+    .container{
+        margin-top: 20vh;
+
+            @media (max-width:1340px){
+
+                margin-top: 10vh;
+            }
+
+          
+       .row{
+        display: flex;
+        width: 100%;
+  
+         .MainC{
+  
+            margin: 0 auto;
+         }
+       }
+  
+      .mat-raised-button{
+  
+        
+        width: 200PX;
+        height: 50PX;
+        text-align: CENTER;
+       }
+  
+       .headerDivider1 {
+        border-left:1px solid #38546d;height:400px;position:absolute;
+        top: 30%;
+        left: 50%;
+
+
+        }
+        
+        .headerDivider2 {
+        border-left:1px solid #16222c;height:400px;position:absolute;
+        top: 25%;
+        left: 50%;
+        }
+        .register_text1{
+        color: #1d2129;
+        font-size: 30px;
+        line-height: 1.34;
+        }
+        .register_text2{
+            color: #1d2129;
+            font-size: 16px;
+            }
+            
+            .LeftC{
+                display: flex;
+                flex-direction: column;
+            }
+            .RightC{
+                text-align: center;
+                margin-top: -7.8%;
+                }
+  
+                .RightContent{
+                    margin-top: -5%;
+                    padding-left: 10%;
+                    border-left: 1px solid;
+                    @media screen and (max-width: 1340px) {
+                        margin-top: 2%;
+                         border-left: none;
+                         padding-left: 0;
+                    }
+                  
+                }
+                .Leftcontent{
+
+                    padding-right: 10%;
+
+                }  
+    }
+  }

@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppService } from './services/app.service';
 import { HttpClientModule } from '@angular/common/http';
 import { QuestionAnswerComponent } from './components/question-answer/question-answer.component';
+import { LoginRegisterComponent } from './components/login-register/login-register.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { QuestionAnswerComponent } from './components/question-answer/question-a
     HeaderComponent,
     DashboardComponent,
     PostQuestionComponent,
-    QuestionAnswerComponent
+    QuestionAnswerComponent,
+    LoginRegisterComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,7 @@ import { QuestionAnswerComponent } from './components/question-answer/question-a
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
+  entryComponents:[LoginRegisterComponent],
   providers: [
     AppService
   ],
