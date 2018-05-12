@@ -1,23 +1,31 @@
 
-app-login-register {
+app-login-register{
+
   width: 100%;
 }
 .info-tip {
-  color: red;
-  font-size: 18px;
-  text-align: center;
+color: red;
+font-size: 18px;
+text-align: center;
 }
 .example-container {
   display: flex;
   flex-direction: column;
   position: relative;
 }
+
 .example-container > * {
   width: 100%;
 }
-.close_button {
-  position: absolute;
-  right: 10px;
-  top: 10px;
+.close_button button{
+ position: absolute;
+right: 0px;
+top: 0px;
+&:hover, &:focus {
+  background-color: transparent;
+}
+.mat-button-ripple, .mat-button-focus-overlay {
+  display: none;
+}
 }
 
