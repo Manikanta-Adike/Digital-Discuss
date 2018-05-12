@@ -69,14 +69,14 @@ p{
                         color: #0085a1;
                     }
 
-                    .question-title{
+                    .question-title {
                         font-size: 24px;
                         margin-top: 30px;
                         margin-bottom: 10px;
                         text-align: left;
                     }
 
-                    .question-subtitle{
+                    .question-subtitle {
                         font-weight: 300;
                         margin: 0 0 10px;
                         font-size: 22px;
@@ -100,4 +100,12 @@ p{
             overflow: auto;
         }
     }
+}
+
+.question-title-top-tag {
+    font-size: 24px;
+}
+
+.small-questions-list {
+    font-size: 22px;
 }

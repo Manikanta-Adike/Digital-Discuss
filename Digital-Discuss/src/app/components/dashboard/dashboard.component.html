@@ -57,11 +57,14 @@
           <h1 class = 'selected-section'>{{selectedTab}}</h1>
             <div *ngFor="let elem of questionList">
                     <div class="question-preview">
-                        <a href="post.html">
-                          <h2 class="question-title" *ngIf = "elem['value']">
-                            {{elem.key}}{{" - " + elem['value'].length + " queries"}}
-                          </h2>
-                        </a>
+                          <div *ngIf = "elem['value']">
+                              <h2 class="question-title-top-tag">
+                                {{elem.key}}{{" - " + elem['value'].length + " queries"}}
+                              </h2>
+                              <div *ngFor = 'let value of elem["value"]'>
+                                <p class="small-questions-list">{{value.title}}</p>
+                              </div>
+                          </div>
                       </div>
                     </div>  
       </div>
