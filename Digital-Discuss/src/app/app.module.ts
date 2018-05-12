@@ -9,6 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MaterialModule } from './dependencies/material.module';
 import { routes } from './app.routing';
 import { PostQuestionComponent } from './components/post-question/post-question.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PostQuestionComponent } from './components/post-question/post-question.
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes)
   ],

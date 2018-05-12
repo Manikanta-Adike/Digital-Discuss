@@ -40,12 +40,13 @@
                   </div>
             </div>
       <div class = 'tab-content' *ngIf = 'activeTab === "topQuestion"'>
-        Top Queries
+          <h1 class = 'selected-section'>Top Queries</h1>
       </div>
       <div class = 'tab-content' *ngIf = 'activeTab === "topTag"'>
-        Top Tags
+          <h1 class = 'selected-section'>Top Tags</h1>
       </div>
       <div class = 'tab-content' *ngIf = 'activeTab === "postQuestion"'>
+        <h1 class = 'selected-section'>Ask a Question</h1>
         <app-post-question></app-post-question>
       </div>
     </div>

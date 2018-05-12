@@ -2,6 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import {MatChipInputEvent} from '@angular/material';
 import {ENTER, COMMA} from '@angular/cdk/keycodes';
 
+import {
+  ReactiveFormsModule,
+  FormsModule,
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+  FormArray,
+  AbstractControl
+} from '@angular/forms';
+
 @Component({
   selector: 'app-post-question',
   templateUrl: './post-question.component.html',
@@ -15,9 +26,15 @@ export class PostQuestionComponent implements OnInit {
 
   // Enter, comma
   separatorKeysCodes = [ENTER, COMMA];
-
   tags = [];
-  constructor() { }
+  public form: FormGroup;
+  constructor(protected _formBuilder: FormBuilder) {
+    this.form = _formBuilder.group({
+      'title': [''],
+      'description': [''],
+      'tags': [[]]
+    });
+  }
 
   ngOnInit() {
   }
@@ -30,7 +47,7 @@ export class PostQuestionComponent implements OnInit {
 
     // Add our fruit
     if ((value || '').trim()) {
-      this.tags.push({ name: value.trim() });
+      this.tags.push(value.trim());
     }
 
     // Reset the input value
@@ -47,4 +64,8 @@ export class PostQuestionComponent implements OnInit {
     }
   }
 
+  onSubmit() {
+    this.form.controls.tags.setValue(this.tags);
+    console.log(this.form);
+  }
 }

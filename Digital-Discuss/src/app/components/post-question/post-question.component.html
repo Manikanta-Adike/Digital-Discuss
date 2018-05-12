@@ -1,25 +1,49 @@
-<div class="post-question-page">
-  <form name="post-question" class="" id="post-question">
+<!-- <div class="post-question-page">
+  <form name="post-question" class="" id="post-question" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input matInput placeholder="Title">
+      <input matInput placeholder="Question Title">
     </mat-form-field>
     <mat-form-field>
-      <textarea matInput placeholder="Description"></textarea>
-    </mat-form-field>
-    <mat-form-field class="tags-chip-list">
+        <textarea matInput placeholder="Question Description" matTextareaAutosize matAutosizeMinRows="2"
+                  matAutosizeMaxRows="10"></textarea>
+      </mat-form-field>
+    <mat-form-field class="tags-chip-list" hintLabel="For eg: html, css, javascript">
       <mat-chip-list #chipList>
         <mat-chip color="warn" *ngFor="let tag of tags" [selectable]="selectable"
                  [removable]="removable" (removed)="remove(tag)">
           {{tag.name}}
           <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
         </mat-chip>
-        <input placeholder="Tags..."
+        <input placeholder="Related Tags..."
                [matChipInputFor]="chipList"
                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                [matChipInputAddOnBlur]="addOnBlur"
                (matChipInputTokenEnd)="add($event)" />
       </mat-chip-list>
     </mat-form-field>
-    <button mat-raised-button color="primary">Submit Query</button>
+    <br>
+    <button mat-raised-button color="primary" type="submit">Submit Query</button>
+  </form>
+</div> -->
+<div class="post-question-page">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="">
+    <mat-form-field>
+      <input matInput formControlName="title" placeholder="Question Title">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput formControlName="description" placeholder="Question Description" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="10"></textarea>
+    </mat-form-field>
+    <mat-form-field class="tags-chip-list" hintLabel="For eg: html, css, javascript">
+      <mat-chip-list #chipList>
+        <mat-chip color="warn" *ngFor="let tag of tags" [selectable]="selectable" [removable]="removable" (removed)="remove(tag)">
+          {{tag}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Related Tags..." [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add($event)" />
+      </mat-chip-list>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit">Submit Query</button>
   </form>
 </div>
