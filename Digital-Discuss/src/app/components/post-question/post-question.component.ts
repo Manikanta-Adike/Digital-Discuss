@@ -75,8 +75,12 @@ export class PostQuestionComponent implements OnInit {
         panelClass: 'loading-dialog-pane'
     });
     this.appService.postQuestion(this.form.value).subscribe(data => {
+          if (data['status'] < 400 ) {
             console.log('success');
             dialogRef.close();
+            const elem = <HTMLElement>document.getElementsByClassName('recentQuestion')[0] as HTMLElement;
+            elem.click();
+          }
             return true;
            },
            error => {

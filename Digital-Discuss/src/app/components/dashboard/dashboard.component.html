@@ -2,22 +2,22 @@
   <div class = "row">
     <div class = " col-2 side-tab-wrapper">
       <div class = 'side-tab col-12'>
-        <span class = 'active tab-heading' (click) = "changeTab('recentQuestion')"><i class="material-icons">
+        <span class = 'tab-heading recentQuestion {{activeTab === "recentQuestion" ? "active" : ""}}' (click) = "changeTab('recentQuestion')"><i class="material-icons">
             update
             </i>Recent Questions</span>
       </div>
       <div class = 'side-tab col-12' >
-        <span class = 'tab-heading' (click) = "changeTab('topQuestion')"><i class="material-icons">
+        <span class = 'tab-heading {{activeTab === "topQuestion" ? "active" : ""}}' (click) = "changeTab('topQuestion')"><i class="material-icons">
             trending_up
             </i>Top Queries</span>
       </div>
       <div class = 'side-tab col-12' >
-        <span class = 'tab-heading' (click) = "changeTab('topTag')"><i class="material-icons">
+        <span class = 'tab-heading {{activeTab === "topTag" ? "active" : ""}}' (click) = "changeTab('topTag')"><i class="material-icons">
             pie_chart
             </i>Top Tags</span>
       </div>
       <div class = 'side-tab col-12'>
-        <span class = 'tab-heading' (click) = "changeTab('postQuestion')"><i class="material-icons">
+        <span class = 'tab-heading {{activeTab === "postQuestion" ? "active" : ""}}' (click) = "changeTab('postQuestion')"><i class="material-icons">
             question_answer
             </i>Ask a Question</span>
       </div>

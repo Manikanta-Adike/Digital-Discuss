@@ -36,8 +36,8 @@ export class LoginRegisterComponent implements OnInit {
     if (this.userForm.dirty && this.userForm.valid) {
    //   alert(`Name: ${this.userForm.value.name} pwd: ${this.userForm.value.password}`);
       const obj = {
-        username: this.userForm.value.name,
-        password: this.userForm.value.password
+        'username': this.userForm.value.name,
+        'password': this.userForm.value.password
       };
         this.appService.userlogin(obj).subscribe(data => {
           console.log('success  ' + this.userForm.value.name);

@@ -46,12 +46,12 @@ export class DashboardComponent implements OnInit {
       this.getQuestion('http://localhost:3000/getTopTags');
     }
 
-    const tabs = document.querySelectorAll('.tab-heading');
+    // const tabs = document.querySelectorAll('.tab-heading');
 
-    for (let i = 0; i < tabs.length; i++) {
-      tabs[i].className = 'tab-heading';
-    }
+    // for (let i = 0; i < tabs.length; i++) {
+    //   tabs[i].className = 'tab-heading';
+    // }
 
-    event.srcElement.className = 'tab-heading active';
+    // event.srcElement.className = 'tab-heading active';
   }
 }

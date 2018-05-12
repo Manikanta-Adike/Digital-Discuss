@@ -25,9 +25,9 @@ export class AppService {
         const headers = new HttpHeaders()
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json');
-        const body = JSON.stringify(usr);
-        console.log(body);
-        return this._http.post(`http://localhost:3000/checkLogin`, body);
+        // const body = JSON.stringify(usr);
+        // console.log(body);
+        return this._http.post(`http://localhost:3000/checkLogin`, usr);
     }
 
     registerUser(reusr: any) {
