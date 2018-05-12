@@ -34,13 +34,10 @@ p{
                     color:#868e96;
                     font-size: 18px;
 
-                    &.active{
-                        color: #adb5bd;
+                    &.active, &:hover{
+                        color: #fff;
                     }
-                    
-                    &:hover{
-                        color: #adb5bd;
-                    }
+                
 
                     .material-icons{
                         font-size: 20px;

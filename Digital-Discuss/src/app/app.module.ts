@@ -12,13 +12,15 @@ import { PostQuestionComponent } from './components/post-question/post-question.
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppService } from './services/app.service';
 import { HttpClientModule } from '@angular/common/http';
+import { QuestionAnswerComponent } from './components/question-answer/question-answer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DashboardComponent,
-    PostQuestionComponent
+    PostQuestionComponent,
+    QuestionAnswerComponent
   ],
   imports: [
     BrowserModule,
