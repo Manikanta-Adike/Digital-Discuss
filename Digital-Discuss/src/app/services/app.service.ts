@@ -19,7 +19,7 @@ export class AppService {
         return this._http.get<any[]>(url);
     }
     getAnswer(url, id) {
-        return this._http.put(url, id);
+        return this._http.get(url, id);
     }
     userlogin(usr: any) {
         const headers = new HttpHeaders()

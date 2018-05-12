@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AppService } from '../../services/app.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-question-answer',
@@ -9,13 +11,20 @@ import { AppService } from '../../services/app.service';
 })
 export class QuestionAnswerComponent implements OnInit {
 
-  constructor(private appServive: AppService) { }
-
   answerForm = new FormGroup({
     answer: new FormControl()
   });
 
+  public question: any;
+
+  constructor(private appServive: AppService,
+              private route: ActivatedRoute,
+              private location: Location) { }
+
   ngOnInit() {
   }
 
+  getAnswer() {
+
+  }
 }

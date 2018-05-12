@@ -22,33 +22,40 @@
             </i>Ask a Question</span>
       </div>
     </div>
+      <!-- {{questionList | json}} -->
+      
+        
     <div class = "col-10 right-section">
-      <div class = 'tab-content' *ngIf = 'activeTab === "recentQuestion"'>
-        <h1 class = 'selected-section'>Recent Questions</h1>
+      <div class = 'tab-content'>
+        <h1 class = 'selected-section'>{{selectedTab}}</h1>
+        <div *ngFor="let elem of questionList">
                 <div class="question-preview">
                     <a href="post.html">
                       <h2 class="question-title">
-                        Man must explore, and this is exploration at its greatest
+                        {{elem.title}}
                       </h2>
                       <h3 class="question-subtitle">
-                        Problems look mighty small from 150 miles up
+                        {{elem.description}}
                       </h3>
                     </a>
+
                     <p class="question-meta">Posted by
-                      <a href="#">Start Bootstrap</a>
+                      <a href="#">{{elem.username}}</a>
                       on September 24, 2018</p>
                       <mat-chip-list>
-                          <mat-chip>HTML</mat-chip>
-                          <mat-chip>CSS</mat-chip>
+                        <span *ngFor = "let interest of elem.tag">
+                          <mat-chip >{{interest}}</mat-chip>
+                        </span>  
                         </mat-chip-list>
                   </div>
+                </div>  
             </div>
-      <div class = 'tab-content' *ngIf = 'activeTab === "topQuestion"'>
+      <!-- <div class = 'tab-content' *ngIf = 'activeTab === "topQuestion"'>
           <h1 class = 'selected-section'>Top Queries</h1>
       </div>
       <div class = 'tab-content' *ngIf = 'activeTab === "topTag"'>
           <h1 class = 'selected-section'>Top Tags</h1>
-      </div>
+      </div> -->
       <div class = 'tab-content' *ngIf = 'activeTab === "postQuestion"'>
         <h1 class = 'selected-section'>Ask a Question</h1>
         <app-post-question></app-post-question>

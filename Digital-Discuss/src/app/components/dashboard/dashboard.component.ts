@@ -11,6 +11,7 @@ import { AppService } from '../../services/app.service';
 export class DashboardComponent implements OnInit {
 
   public activeTab: String = 'recentQuestion';
+  public selectedTab: String = 'Recent Question';
   public questionList: any[] = [];
 
   constructor(private appService: AppService) { }
@@ -20,24 +21,26 @@ export class DashboardComponent implements OnInit {
   }
 
   public getQuestion(url): void {
-    this.appService.getQuestion(url).subscribe( question => this.questionList = question);
+    this.appService.getQuestion(url).subscribe( question => {this.questionList = question['questions']; console.log(this.questionList); });
   }
 
   public changeTab(selected)  {
     this.activeTab = selected;
 
     if (selected === 'recentQuestion') {
+      this.selectedTab = 'Recent Question';
       this.getQuestion('http://localhost:3000/getQuestions');
     } else if (selected === 'topQuestion') {
+      this.selectedTab = 'Top Question';
       this.getQuestion('http://localhost:3000/getTopQuestions');
     } else if (selected === 'topTag') {
+      this.selectedTab = 'Top Tag';
       this.getQuestion('http://localhost:3000/getTopTags');
     }
 
     const tabs = document.querySelectorAll('.tab-heading');
 
     for (let i = 0; i < tabs.length; i++) {
-      console.log(tabs[i]);
       tabs[i].className = 'tab-heading';
     }
 
