@@ -26,7 +26,7 @@
       
         
     <div class = "col-10 right-section">
-      <div class = 'tab-content'>
+      <div class = 'tab-content' *ngIf = "selectedTab === 'Recent Question' || selectedTab === 'Top Question'">
         <h1 class = 'selected-section'>{{selectedTab}}</h1>
         <div *ngFor="let elem of questionList">
                 <div class="question-preview">
@@ -52,10 +52,19 @@
             </div>
       <!-- <div class = 'tab-content' *ngIf = 'activeTab === "topQuestion"'>
           <h1 class = 'selected-section'>Top Queries</h1>
-      </div>
-      <div class = 'tab-content' *ngIf = 'activeTab === "topTag"'>
-          <h1 class = 'selected-section'>Top Tags</h1>
       </div> -->
+      <div class = 'tab-content' *ngIf = 'selectedTab === "Top Tag"'>
+          <h1 class = 'selected-section'>{{selectedTab}}</h1>
+            <div *ngFor="let elem of questionList">
+                    <div class="question-preview">
+                        <a href="post.html">
+                          <h2 class="question-title" *ngIf = "elem['value']">
+                            {{elem.key}}{{" - " + elem['value'].length + " queries"}}
+                          </h2>
+                        </a>
+                      </div>
+                    </div>  
+      </div>
       <div class = 'tab-content' *ngIf = 'activeTab === "postQuestion"'>
         <h1 class = 'selected-section'>Ask a Question</h1>
         <app-post-question></app-post-question>
