@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatChipInputEvent} from '@angular/material';
+import {MatChipInputEvent, MatDialog} from '@angular/material';
 import {ENTER, COMMA} from '@angular/cdk/keycodes';
 import { AppService } from '../../services/app.service';
 
@@ -13,6 +13,7 @@ import {
   FormArray,
   AbstractControl
 } from '@angular/forms';
+import { LoadingDialogDetailComponent } from '../loading-dialog/loading-dialog-detail.component';
 
 @Component({
   selector: 'app-post-question',
@@ -29,11 +30,12 @@ export class PostQuestionComponent implements OnInit {
   separatorKeysCodes = [ENTER, COMMA];
   tags = [];
   public form: FormGroup;
-  constructor(protected _formBuilder: FormBuilder, public appService: AppService) {
+  constructor(protected _formBuilder: FormBuilder, public appService: AppService, public dialog: MatDialog) {
     this.form = _formBuilder.group({
       'title': [''],
       'description': [''],
-      'tags': [[]]
+      'tags': [[]],
+      'answers': [],
     });
   }
 
@@ -68,11 +70,17 @@ export class PostQuestionComponent implements OnInit {
   onSubmit() {
     this.form.controls.tags.setValue(this.tags);
     console.log(this.form);
+    const dialogRef = this.dialog.open(LoadingDialogDetailComponent, {
+      hasBackdrop: false,
+        panelClass: 'loading-dialog-pane'
+    });
     this.appService.postQuestion(this.form.value).subscribe(data => {
             console.log('success');
+            dialogRef.close();
             return true;
            },
            error => {
+            dialogRef.close();
            console.error('Error saving food!');
              // return Observable.throw(error);
            });

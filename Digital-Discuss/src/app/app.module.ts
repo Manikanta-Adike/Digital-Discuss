@@ -13,8 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppService } from './services/app.service';
 import { HttpClientModule } from '@angular/common/http';
 import { QuestionAnswerComponent } from './components/question-answer/question-answer.component';
+import { LoadingDialogDetailComponent } from './components/loading-dialog/loading-dialog-detail.component';
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
-
 
 @NgModule({
   declarations: [
@@ -23,9 +23,8 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
     DashboardComponent,
     PostQuestionComponent,
     QuestionAnswerComponent,
-    LoginRegisterComponent,
-    
-    
+    LoadingDialogDetailComponent,
+    LoginRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +34,12 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
-  entryComponents:[LoginRegisterComponent],
   providers: [
     AppService
+  ],
+  entryComponents: [
+    LoadingDialogDetailComponent,
+    LoginRegisterComponent
   ],
   bootstrap: [AppComponent]
 })
