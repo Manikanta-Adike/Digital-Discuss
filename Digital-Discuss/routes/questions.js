@@ -2,6 +2,9 @@ var db = require('../database-config/mongodb.js');
 
 exports.addQuestion = function (req, res) {
     var data = {};
+    if(!req.body.answers) {
+        req.body['answers'] = [];
+    }
     console.log(req.body);
     var questions = new db.questionsModel(req.body);
     questions.save(function (err, success) {
