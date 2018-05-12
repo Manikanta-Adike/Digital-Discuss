@@ -21,7 +21,14 @@ export class DashboardComponent implements OnInit {
   }
 
   public getQuestion(url): void {
-    this.appService.getQuestion(url).subscribe( question => {this.questionList = question['questions']; console.log(this.questionList); });
+    this.appService.getQuestion(url).subscribe( question => {
+      if (this.selectedTab === 'Recent Question' || this.selectedTab === 'Top Question' ) {
+        this.questionList = question['questions'];
+      } else if (this.selectedTab = 'Top Tag') {
+        this.questionList = question;
+      }
+    }
+    );
   }
 
   public changeTab(selected)  {
@@ -29,6 +36,7 @@ export class DashboardComponent implements OnInit {
 
     if (selected === 'recentQuestion') {
       this.selectedTab = 'Recent Question';
+
       this.getQuestion('http://localhost:3000/getQuestions');
     } else if (selected === 'topQuestion') {
       this.selectedTab = 'Top Question';
