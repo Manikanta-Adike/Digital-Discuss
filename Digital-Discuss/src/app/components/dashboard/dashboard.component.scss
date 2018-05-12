@@ -15,7 +15,7 @@ p{
 
         .side-tab-wrapper{
             background: #263b50;
-
+            overflow: auto;
             .side-tab{
                 margin: 10px 0px;
                 //background: #e9ecef;
@@ -97,6 +97,9 @@ p{
                     }
                 }
             }
+        }
+        .right-section {
+            overflow: auto;
         }
     }
 }

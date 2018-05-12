@@ -10,6 +10,8 @@ import { MaterialModule } from './dependencies/material.module';
 import { routes } from './app.routing';
 import { PostQuestionComponent } from './components/post-question/post-question.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AppService } from './services/app.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
