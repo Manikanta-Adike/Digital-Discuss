@@ -45,7 +45,7 @@ app.post('/checkLogin', routes.user.login);
 app.post('/register', routes.user.register);
 
 // Restful API for user registration
-app.post('/getProfileDetails', routes.user.getProfileDetails);
+app.get('/getProfileDetails', routes.user.getProfileDetails);
 
 // Restfull API to logout the user
 app.post('/logout', routes.user.logout);
