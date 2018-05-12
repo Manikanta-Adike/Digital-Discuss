@@ -1,63 +1,47 @@
 <div class = 'container-fluid'>
   <div class = 'row'>
     <div class = "col-10 mx-auto">
+        <button mat-raised-button color="primary" class = "back-button" (click) = "returnBack();"><i class="material-icons">
+            keyboard_backspace
+            </i>Back</button>
       <div class="question-preview">
           <a href="post.html">
             <h2 class="question-title">
-              Man must explore, and this is exploration at its greatest
+              {{questionTitle}}
             </h2>
             <h3 class="question-subtitle">
-              Problems look mighty small from 150 miles up
+              {{questionDescription}}
             </h3>
           </a>
           <p class="question-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 24, 2018</p>
+            <a href="#">{{user}}</a>
+          </p>
             <mat-chip-list>
-                <mat-chip>HTML</mat-chip>
+                <mat-chip *ngFor = 'let tag of questionTags' >{{tag}}</mat-chip>
                 <mat-chip>CSS</mat-chip>
               </mat-chip-list>
       </div>
     </div>
     <div class = "col-10 mx-auto">
-      <div class = "answer">
-        <h6>Answer 1</h6>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      <div class = "answer" *ngFor = "let answer of questionAnswer">
+        <h6>Answer {{index}}</h6>
+        <p>{{answer.description}}</p>
         <p class="question-meta">Posted by
-            <a href="#">Abhishek</a>
+            <a href="#">{{answer.username}}</a>
             on September 24, 2018 
-            <span class = "like-button">
+            <span class = "like-button">{{answer.like.length}}
                 <i class="material-icons">
                     thumb_down
                     </i>
               
             </span>
-            <span class = "dislike-button">
+            <span class = "dislike-button">{{answer.dislike.length}}
                 <i class="material-icons">
                     thumb_up
                   </i>
             </span>
         </p>
       </div>
-
-      <div class = "answer">
-          <h6>Answer 2</h6>
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-          <p class="question-meta">Posted by
-              <a href="#">Amjad</a>
-              on September 24, 2018 
-              <span class = "like-button rated">
-                  <i class="material-icons">
-                      thumb_down
-                      </i>
-              </span>
-              <span class = "dislike-button">
-                  <i class="material-icons">
-                      thumb_up
-                    </i>
-              </span>
-          </p>
-        </div>
     </div>
 
     <div class = "col-10 mx-auto">
@@ -67,7 +51,7 @@
               <mat-form-field>
                 <textarea matInput placeholder="Answer" formControlName = 'answer'></textarea>
               </mat-form-field>
-              <button mat-raised-button color="primary">Submit Answer</button>
+              <button mat-raised-button color="primary" (click) = 'postAnswer();' >Submit Answer</button>
           </form>
       </div>
     </div>  

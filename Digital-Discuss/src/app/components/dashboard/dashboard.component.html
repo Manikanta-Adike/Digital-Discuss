@@ -30,7 +30,7 @@
         <h1 class = 'selected-section'>{{selectedTab}}</h1>
         <div *ngFor="let elem of questionList">
                 <div class="question-preview">
-                    <a href="post.html">
+                    <a (click) = "routeFunction(elem)">
                       <h2 class="question-title">
                         {{elem.title}}
                       </h2>

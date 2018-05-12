@@ -15,16 +15,42 @@ export class QuestionAnswerComponent implements OnInit {
     answer: new FormControl()
   });
 
-  public question: any;
+  public questionAnswer: any;
+  public questionTitle: any;
+  public questionDescription: any;
+  public questionTags: any[];
+  public user: any;
 
   constructor(private appServive: AppService,
               private route: ActivatedRoute,
               private location: Location) { }
 
   ngOnInit() {
+    this.getAnswer();
+    this.questionTitle = this.appServive.question.title;
+    this.questionDescription = this.appServive.question.description;
+    this.questionTags = this.appServive.question.tags;
+    this.user = this.appServive.question.user;
   }
 
   getAnswer() {
+    const currentId = this.appServive.question.id;
+    const url = 'http://localhost:3000/getAnswers';
+    this.appServive.getAnswer(url, currentId).subscribe(response => this.questionAnswer = response['answers']);
+  }
 
+  returnBack(){
+    this.location.back();
+  }
+
+  postAnswer() {
+    const data = {};
+    data['like'] = [];
+    data['dislike'] = [];
+    data['username'] = 'ram';
+    data['questionid'] = this.appServive.question.id;
+    data['description'] = this.answerForm['answer'].value;
+    const url = 'http://localhost:3000/addAnswer';
+    this.appServive.postAnswer(url, data).subscribe( response => console.log(response) );
   }
 }
