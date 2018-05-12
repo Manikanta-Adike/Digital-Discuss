@@ -2,7 +2,13 @@
 app-login-register{
   width: 100%;
 }
+.info-tip {
+  color: red;
+  font-size: 18px;
+  text-align: center;
+}
 .example-container {
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
 }
@@ -11,4 +17,19 @@ app-login-register{
   width: 100%;
 }
 
+=======
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+ .close_button {
+   position: absolute;
+   right: 10px;
+   top: 10px;
+ } 
+>>>>>>> c2e1553443e30ecacc38018f8ba6f08f54500666
 

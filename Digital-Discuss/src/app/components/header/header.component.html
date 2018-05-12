@@ -7,6 +7,7 @@
     <!-- This fills the remaining space of the current row -->
     <span class="fill-remaining-space"></span>
   
-    <span class="header-signin" (click)="openSignin()">Sign In</span>
+    <span class="header-signin" *ngIf="!appService.user.username" (click)="openSignin()">Sign In</span>
+    <span class="header-signin" *ngIf="appService.user.username" (click)="signout()">Sign Out</span>
   </mat-toolbar>
 </div>
