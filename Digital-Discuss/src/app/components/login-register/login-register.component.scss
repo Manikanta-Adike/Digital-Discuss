@@ -17,15 +17,15 @@ text-align: center;
 .example-container > * {
   width: 100%;
 }
-.close_button button{
- position: absolute;
-right: 0px;
-top: 0px;
-&:hover, &:focus {
-  background-color: transparent;
-}
-.mat-button-ripple, .mat-button-focus-overlay {
-  display: none;
-}
+.close_button .mat-button{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  &:hover, &:focus {
+    background-color: transparent;
+  }
+  .mat-button-ripple, .mat-button-focus-overlay {
+    display: none;
+  }
 }
 

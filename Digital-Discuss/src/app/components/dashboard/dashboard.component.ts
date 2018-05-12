@@ -29,11 +29,12 @@ export class DashboardComponent implements OnInit {
         this.questionList = question['questions'];
       } else if (this.selectedTab = 'Top Tag') {
         this.questionList = question;
+      } else if (this.selectedTab = 'profile') {
+        this.questionList = question;
       }
     }
     );
   }
-
   routeFunction(ele){
     this.appService.question.title = ele.title;
     this.appService.question.description = ele.description;
@@ -44,7 +45,7 @@ export class DashboardComponent implements OnInit {
   }
 
   public changeTab(selected)  {
-    if (selected === 'postQuestion' && !this.appService.user.username) {
+    if ((selected === 'postQuestion' || selected === 'profile') && !this.appService.user.username) {
       const dialogRef = this.dialog.open(LoginRegisterComponent, {
         data : 'You have to Login/Register to proceed further'
       });
@@ -65,6 +66,10 @@ export class DashboardComponent implements OnInit {
     } else if (selected === 'askQuestion') {
       this.selectedTab = 'Ask Question';
       console.log(this.selectedTab);
+    } else if (selected === 'profile') {
+      this.selectedTab = 'profile';
+      this.getQuestion('http://localhost:3000/getProfileDetails');
     }
+
   }
 }
