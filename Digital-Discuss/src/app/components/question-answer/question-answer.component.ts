@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-question-answer',
@@ -8,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class QuestionAnswerComponent implements OnInit {
 
   constructor() { }
+
+  answerForm = new FormGroup({
+    answer: new FormControl()
+  });
 
   ngOnInit() {
   }

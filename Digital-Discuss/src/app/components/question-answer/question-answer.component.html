@@ -64,9 +64,9 @@
     <div class = "col-10 mx-auto">
       <div class = "post-answer">
         <h2>Post your Answer</h2>
-          <form name="post-answer" class="" id="post-answer">
+          <form name="post-answer" class="" id="post-answer" [formGroup] = 'answerForm'>
               <mat-form-field>
-                <textarea matInput placeholder="Answer"></textarea>
+                <textarea matInput placeholder="Answer" formControlName = 'answer'></textarea>
               </mat-form-field>
               <button mat-raised-button color="primary">Submit Answer</button>
           </form>
