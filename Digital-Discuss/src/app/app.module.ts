@@ -10,22 +10,29 @@ import { MaterialModule } from './dependencies/material.module';
 import { routes } from './app.routing';
 import { PostQuestionComponent } from './components/post-question/post-question.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AppService } from './services/app.service';
+import { HttpClientModule } from '@angular/common/http';
+import { QuestionAnswerComponent } from './components/question-answer/question-answer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DashboardComponent,
-    PostQuestionComponent
+    PostQuestionComponent,
+    QuestionAnswerComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

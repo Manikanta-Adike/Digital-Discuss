@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatChipInputEvent} from '@angular/material';
 import {ENTER, COMMA} from '@angular/cdk/keycodes';
+import { AppService } from '../../services/app.service';
 
 import {
   ReactiveFormsModule,
@@ -28,7 +29,7 @@ export class PostQuestionComponent implements OnInit {
   separatorKeysCodes = [ENTER, COMMA];
   tags = [];
   public form: FormGroup;
-  constructor(protected _formBuilder: FormBuilder) {
+  constructor(protected _formBuilder: FormBuilder, public appService: AppService) {
     this.form = _formBuilder.group({
       'title': [''],
       'description': [''],
@@ -67,5 +68,13 @@ export class PostQuestionComponent implements OnInit {
   onSubmit() {
     this.form.controls.tags.setValue(this.tags);
     console.log(this.form);
+    this.appService.postQuestion(this.form.value).subscribe(data => {
+            console.log('success');
+            return true;
+           },
+           error => {
+           console.error('Error saving food!');
+             // return Observable.throw(error);
+           });
   }
 }

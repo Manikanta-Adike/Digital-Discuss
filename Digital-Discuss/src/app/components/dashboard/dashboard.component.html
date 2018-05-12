@@ -22,7 +22,7 @@
             </i>Ask a Question</span>
       </div>
     </div>
-    <div class = "col-10">
+    <div class = "col-10 right-section">
       <div class = 'tab-content' *ngIf = 'activeTab === "recentQuestion"'>
         <h1 class = 'selected-section'>Recent Questions</h1>
                 <div class="question-preview">
@@ -37,6 +37,10 @@
                     <p class="question-meta">Posted by
                       <a href="#">Start Bootstrap</a>
                       on September 24, 2018</p>
+                      <mat-chip-list>
+                          <mat-chip>HTML</mat-chip>
+                          <mat-chip>CSS</mat-chip>
+                        </mat-chip-list>
                   </div>
             </div>
       <div class = 'tab-content' *ngIf = 'activeTab === "topQuestion"'>

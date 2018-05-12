@@ -15,7 +15,7 @@ p{
 
         .side-tab-wrapper{
             background: #263b50;
-
+            overflow: auto;
             .side-tab{
                 margin: 10px 0px;
                 //background: #e9ecef;
@@ -34,13 +34,10 @@ p{
                     color:#868e96;
                     font-size: 18px;
 
-                    &.active{
-                        color: #adb5bd;
+                    &.active, &:hover{
+                        color: #fff;
                     }
-                    
-                    &:hover{
-                        color: #adb5bd;
-                    }
+                
 
                     .material-icons{
                         font-size: 20px;
@@ -97,6 +94,9 @@ p{
                     }
                 }
             }
+        }
+        .right-section {
+            overflow: auto;
         }
     }
 }
