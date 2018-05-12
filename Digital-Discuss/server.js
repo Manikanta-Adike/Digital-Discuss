@@ -33,6 +33,11 @@ app.get('/', function(req, res){
 	res.sendfile('/dist/index.html');
 });
 
+// Restful API to get the home page
+app.get('/dashboard', function(req, res){
+    res.redirect('/');
+});
+
 // Restfull API to login
 app.post('/checkLogin', routes.user.login);
 

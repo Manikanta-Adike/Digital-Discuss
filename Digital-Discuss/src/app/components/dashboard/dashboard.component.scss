@@ -32,14 +32,13 @@ p{
                     display: table-cell;
                     vertical-align: middle;
                     width: 100%;
-                    color:#868e96;
+                    color: #fff;
                     font-size: 18px;
 
                     &.active, &:hover{
-                        color: #fff;
+                        color: #0bf7f7;
                     }
-                
-
+                    
                     .material-icons{
                         font-size: 20px;
                         vertical-align: middle;
