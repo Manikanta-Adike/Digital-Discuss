@@ -49,7 +49,7 @@ export class LoginRegisterComponent implements OnInit {
             return true;
            },
            error => {
-           console.error('Error ');
+           console.log('Error ');
              // return Observable.throw(error);
            });
     }
@@ -78,7 +78,7 @@ export class LoginRegisterComponent implements OnInit {
             return true;
            },
            error => {
-           console.error('Error ');
+           console.log('Error ');
              // return Observable.throw(error);
            });
     }
