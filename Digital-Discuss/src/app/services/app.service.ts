@@ -5,6 +5,13 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class AppService {
     user = { 'username': '' };
+    question = {'title': '',
+                'description' : '',
+                'id': '',
+                'tags': [],
+                'user': ''
+                };
+
     constructor(private _http: HttpClient) {
     }
     postQuestion(question: any) {
@@ -19,8 +26,13 @@ export class AppService {
     getQuestion(url): Observable<any[]> {
         return this._http.get<any[]>(url);
     }
-    getAnswer(url, id) {
-        return this._http.get(url, id);
+    getAnswer(url, id){
+        const temp = {};
+        temp['_id'] = id;
+        return this._http.post<any[]>(url, temp);
+    }
+    postAnswer(url, data) {
+        return this._http.post(url, data);
     }
     userlogin(usr: any) {
         const headers = new HttpHeaders()
