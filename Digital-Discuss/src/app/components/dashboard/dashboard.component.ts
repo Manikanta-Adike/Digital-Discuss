@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../../services/app.service';
+import { LoginRegisterComponent } from '../login-register/login-register.component';
+import { MatDialog } from '@angular/material';
 
 
 @Component({
@@ -14,7 +16,7 @@ export class DashboardComponent implements OnInit {
   public selectedTab: String = 'Recent Question';
   public questionList: any[] = [];
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getQuestion('http://localhost:3000/getQuestions');
@@ -32,6 +34,12 @@ export class DashboardComponent implements OnInit {
   }
 
   public changeTab(selected)  {
+    if (selected === 'postQuestion' && !this.appService.user.username) {
+      const dialogRef = this.dialog.open(LoginRegisterComponent, {
+        data : 'You have to Login/Register to proceed further'
+      });
+      return;
+    }
     this.activeTab = selected;
 
     if (selected === 'recentQuestion') {
@@ -48,13 +56,5 @@ export class DashboardComponent implements OnInit {
       this.selectedTab = 'Ask Question';
       console.log(this.selectedTab);
     }
-
-    // const tabs = document.querySelectorAll('.tab-heading');
-
-    // for (let i = 0; i < tabs.length; i++) {
-    //   tabs[i].className = 'tab-heading';
-    // }
-
-    // event.srcElement.className = 'tab-heading active';
   }
 }

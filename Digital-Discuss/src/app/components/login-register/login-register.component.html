@@ -1,5 +1,10 @@
 <div class="example-container align-middle">
-
+    <div mat-dialog-actions class="close_button">
+        <button mat-button mat-dialog-close="Yes">
+                <i class="material-icons">close</i>
+        </button>
+    </div>
+    <div class="info-tip" *ngIf="data">{{data}}</div>
     <div class="container">
 
           <div fxLayout="row" fxLayout.sm="column" class="row">

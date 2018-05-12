@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AppService } from '../../services/app.service';
-import { MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 
 @Component({
@@ -15,7 +15,8 @@ export class LoginRegisterComponent implements OnInit {
   userForm: FormGroup;
   registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, public appService: AppService, public dialogRef: MatDialogRef<any>) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private formBuilder: FormBuilder, public appService: AppService,
+  public dialogRef: MatDialogRef<any>) {
 
     this.userForm = this.formBuilder.group({
       'name': ['', Validators.required],
@@ -43,6 +44,7 @@ export class LoginRegisterComponent implements OnInit {
           console.log('success  ' + this.userForm.value.name);
           sessionStorage.setItem('username', data['user'].username);
             console.log('success');
+            this.appService.user.username = data['user'].username;
             this.dialogRef.close();
             return true;
            },
