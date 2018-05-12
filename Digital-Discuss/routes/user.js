@@ -20,7 +20,7 @@ exports.register = function (req, res) {
 
 exports.login = function (req, res) {
     var data = {};
-    console.log("body",req.body);
+    console.log("body", req.body);
     db.userModel.findOne(req.body, function (err, success) {
         if (success) {
             console.log(success);
@@ -54,3 +54,39 @@ exports.logout = function (req, res) {
         res.json(data);
     }
 };
+
+exports.getProfileDetails = function (req, res) {
+    var data = {};
+    console.log(req.body);
+    db.answersModel.find({}, { _id: 0 }, function (err, success) {
+        if (success) {
+            console.log(success);
+            data.answers = success;
+            data.status = 201;
+            res.json(prepareProfileData(data.answers));
+        } else {
+            console.log("failure", err);
+            data.status = 401;
+            res.json(data);
+        }
+    }).sort({ _id: -1 });
+}
+
+function prepareProfileData(data) {
+    var user = {};
+    for (var i = 0; i < data.length; i++) {
+        if(!user[data[i].username]) {
+            user[data[i].username] = {};
+            user[data[i].username].answers = [];
+            user[data[i].username]["answers"].push(data[i]);
+            user[data[i].username].like = data[i]["like"].length;
+            user[data[i].username].dislike = data[i]["dislike"].length;
+        } else {
+            user[data[i].username]["answers"].push(data[i]);
+            user[data[i].username].like = user[data[i].username].like + data[i]["like"].length;
+            user[data[i].username].dislike = user[data[i].username].dislike + data[i]["dislike"].length;
+        }
+    }
+
+    return user;
+}

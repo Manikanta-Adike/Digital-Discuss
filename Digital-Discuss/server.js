@@ -39,6 +39,9 @@ app.post('/checkLogin', routes.user.login);
 // Restful API for user registration
 app.post('/register', routes.user.register);
 
+// Restful API for user registration
+app.post('/getProfileDetails', routes.user.getProfileDetails);
+
 // Restfull API to logout the user
 app.post('/logout', routes.user.logout);
 
@@ -59,6 +62,12 @@ app.post('/addQuestion', routes.questions.addQuestion);
 
 // Restfull API to get the users list
 app.post('/addAnswer', routes.answers.addAnswer);
+
+// Restfull API to like a answer
+app.post('/likeAnswer', routes.answers.likeAnswer);
+
+// Restfull API to like a answer
+app.post('/dislikeAnswer', routes.answers.dislikeAnswer);
 
 // Restfull API to get the my questions list
 app.post('/getAnswers', routes.answers.getAnswers);

@@ -40,8 +40,8 @@ var Questions = new Schema({
 var Answers = new Schema({
     questionid: { type: String, required: true },
     username: { type: String, required: true },
-    like: { type: Number, required: true },
-    dislike: { type: Number, required: true },
+    like: { type: Array, required: true },
+    dislike: { type: Array, required: true },
     description: { type: String, required: true },
 });
 
